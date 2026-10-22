@@ -33,11 +33,11 @@ img {
     border: 5px solid hotpink;
 
 }
-#EverySecondRow {
-    background-color: lightpink;
-}
 #TableRow {
     background-color: hotpink;
+}
+tr:nth-child(even) {
+    background-color: lightpink;
 }
 ul {
     list-style:symbols(cyclic'<3');
