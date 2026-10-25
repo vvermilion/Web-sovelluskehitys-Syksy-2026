@@ -13,3 +13,4 @@ if (a == b && b == c && c == a) {
     else {
         result = 'Error unable to determine triangle type';
     }
+document.getElementById('result').textContent = result
