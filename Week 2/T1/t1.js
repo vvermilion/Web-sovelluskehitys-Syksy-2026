@@ -1,33 +1,37 @@
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+// array for todo list
+const todoList = [
+  {
+    id: 1,
+    task: 'Learn HTML',
+    completed: true,
+  },
+  {
+    id: 2,
+    task: 'Learn CSS',
+    completed: true,
+  },
+  {
+    id: 3,
+    task: 'Learn JS',
+    completed: false,
+  },
+  {
+    id: 4,
+    task: 'Learn TypeScript',
+    completed: false,
+  },
+  {
+    id: 5,
+    task: 'Learn React',
+    completed: false,
+  },
+];
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 15rem;
-}
+const list = document.querySelector("ul");
 
-li {
-  border: 1px solid #000;
-  display: flex;
-  justify-content: flex-end;
-  line-height: 3rem;
-}
-
-label {
-  display: block;
-  width: 100%;
-  padding-left: 1rem;
-}
-
-input {
-  position: absolute;
-  margin: 1rem;
-}
-
-input[type='checkbox']:checked + label {
-  background-color: rgb(146, 208, 136);
-  font-weight: bold;
+// add your code here
+for (let index = 0; index < todoList.length; index++) {
+  const listContent = document.createElement("li");
+  listContent.append(todoList[index].task);
+  list.append(listContent);
 }
