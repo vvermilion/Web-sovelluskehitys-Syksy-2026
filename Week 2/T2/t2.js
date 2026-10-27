@@ -1,33 +1,48 @@
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+// array for todo list
+const todoList = [
+  {
+    id: 1,
+    task: "Learn HTML",
+    completed: true,
+  },
+  {
+    id: 2,
+    task: "Learn CSS",
+    completed: true,
+  },
+  {
+    id: 3,
+    task: "Learn JS",
+    completed: false,
+  },
+  {
+    id: 4,
+    task: "Learn TypeScript",
+    completed: false,
+  },
+  {
+    id: 5,
+    task: "Learn React",
+    completed: false,
+  },
+];
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 15rem;
-}
+// add your code here
+const list = document.querySelector("ul");
 
-li {
-  border: 1px solid #000;
-  display: flex;
-  justify-content: flex-end;
-  line-height: 3rem;
-}
+for (const items of todoList) {
+  const listItems = document.createElement("li");
+  const checkbox = document.createElement("input");
+  const label = document.createElement("label");
+  label.htmlFor = `${items.id}`;
+  label.textContent = items.task;
+  checkbox.type = "checkbox";
+  checkbox.id = `${items.id}`;
+  checkbox.checked = items.completed;
 
-label {
-  display: block;
-  width: 100%;
-  padding-left: 1rem;
+  listItems.append(checkbox);
+  listItems.append(label);
+  list.appendChild(listItems);
 }
-
-input {
-  position: absolute;
-  margin: 1rem;
-}
-
-input[type='checkbox']:checked + label {
-  background-color: rgb(146, 208, 136);
-  font-weight: bold;
-}
+//const listText = items.task;
+//  listItems.append(listText);
