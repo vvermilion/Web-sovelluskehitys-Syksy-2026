@@ -33,10 +33,10 @@ for (let index = 0; index < todoList.length; index++) {
   const item = todoList[index];
   const isChecked = item.completed ? "checked" : "";
   const html = `
-  <li> type="checkbox" id="todo-${item.id}" ${isChecked}>
+  <li> <input type="checkbox" id="todo-${item.id}" ${isChecked}>
   <label for="todo-${item.id}">${item.task}</label>
   </li>
   `;
 
-  list.insertAdjacentHTML("beforeend, html");
+  list.insertAdjacentHTML("beforeend", html);
 }
