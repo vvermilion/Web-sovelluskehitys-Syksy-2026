@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opiskelijaravintolat</title>
+  <link rel="stylesheet" href="restaurants.css">
+</head>
+<body>
+  <header class="navbar">
+  <div class="nav-container">
+    <h1 class="logo-title">Suomen opiskelijaravintolat</h1>
+    <button class="signin-btn">Kirjaudu sisään</button>
+  </div>
+  </header>
+
+  <main class="container">
+    <!-- filter and search mockup -->
+    <div class="controls">
+      <input type="text" placeholder="Hae ravintolaa..." disabled>
+      <select disabled>
+        <option>Kaikki kaupungit</option>
+      </select>
+    </div>
+    <!-- mockup table to show design -->
+    <table>
+      <thead>
+        <tr>
+          <th>Ravintola</th>
+          <th>Osoite</th>
+          <th>Suosikki</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Metropolia Karamalmi</td>
+          <td>Karaportti 2, Espoo</td>
+          <td><button class="fav-btn" title="Merkitse suosikiksi">☆</button></td>
+        </tr>
+        <tr>
+          <td>Metropolia Myyrmäki</td>
+          <td>Leiritie 1, Vantaa</td>
+          <td><button class="fav-btn" title="Merkitse suosikiksi">☆</button></td>
+        </tr>
+        <tr>
+          <td>Metropolia Myllypuro</td>
+          <td>Myllypurontie 1, Helsinki</td>
+          <td><button class="fav-btn" title="Merkitse suosikiksi">☆</button></td>
+        </tr>
+      </tbody>
+    </table>

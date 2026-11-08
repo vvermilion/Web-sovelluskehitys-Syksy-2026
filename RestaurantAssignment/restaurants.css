@@ -1,0 +1,153 @@
+:root {
+  --card-bg: #FFFFFF;       /* color for cards/tables  */
+  --primary: #4B5842;       /* color for main headers, nav, dark text */
+  --accent: #8FB339;        /* accent color for primary btns & key highlights */
+  --accent-soft: #C7D59F;   /* soft accent */
+  --border-color: #B7CE63;  /* color for soft borders, card accents */
+  --text-dark: #2B3326;     /* high contrast text */
+  --text-muted: #586650;    /* secondary text */
+  --radius: 10px;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #B7CE63;
+  background-image: radial-gradient(#9eb54c 15%, transparent 16%),
+                    radial-gradient(#9eb54c 15%, transparent 16%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-attachment: fixed;
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Form Controls */
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.controls input, .controls select {
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+/* Restaurant Table */
+table {
+  width: 100%;
+  background: var(--card-bg);
+  border-collapse: collapse;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+th {
+  background-color: var(--accent-soft);
+  color: var(--primary);
+  padding: 1rem;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #EAEAEA;
+  color: var(--text-dark);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: #e5f0ce;
+}
+
+/* action button */
+.btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #799a2e;
+}
+/* favourite button */
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.fav-btn:hover {
+  transform: scale(1.2);
+}
+
+.fav-btn.favorited {
+  color: #f59e0b;
+}
+header.navbar {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+/* sign in */
+.signin-btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.signin-btn:hover {
+  background-color: #799a2e;
+  transform: translateY(-1px);
+}
