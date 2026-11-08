@@ -27,26 +27,44 @@ const todoList = [
   },
 ];
 
-//todo list
+// todo list container
 const todo = document.querySelector("ul");
-for (let index = 0; index < todoList.length; index++) {
-  const item = todoList[index];
+
+function renderTodoItem(item) {
+  const li = document.createElement("li");
   const isChecked = item.completed ? "checked" : "";
-  const html = `
-  <li> <input type="checkbox" id="todo-${item.id}" ${isChecked}>
-  <label for="todo-${item.id}">${item.task}</label>
-  </li>
+
+  li.innerHTML = `
+    <input type="checkbox" id="todo-${item.id}" ${isChecked}>
+    <label for="todo-${item.id}">${item.task}</label>
+    <button class="delete-btn">Delete</button>
   `;
-  todo.insertAdjacentHTML("beforeend", html);
-  //checkbox logic
-  const checkbox = document.querySelector(`#todo-${item.id}`);
+
+  const checkbox = li.querySelector("input[type=checkbox]");
   checkbox.addEventListener("change", function (evt) {
     item.completed = evt.target.checked;
-    console.log(todoList);
+    console.log("Updated todoList (Checkbox changed):", todoList);
   });
+
+  const deleteBtn = li.querySelector(".delete-btn");
+  deleteBtn.addEventListener("click", function () {
+    const index = todoList.findIndex((t) => t.id === item.id);
+    if (index !== -1) {
+      todoList.splice(index, 1);
+    }
+
+    todo.removeChild(li);
+
+    console.log("Updated todoList (Item deleted):", todoList);
+  });
+
+  todo.appendChild(li);
 }
 
-//button
+todoList.forEach((item) => {
+  renderTodoItem(item);
+});
+
 const formPopup = document.querySelector("dialog");
 const addTodoButton = document.querySelector(".add-btn");
 addTodoButton.addEventListener("click", function (evt) {
@@ -57,25 +75,23 @@ const saveButton = formPopup.querySelector("button[type=submit]");
 saveButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   const inputText = formPopup.querySelector("input[type=text]");
-  const newTodoItem = inputText.value;
+  const newTodoItem = inputText.value.trim();
 
   if (newTodoItem === "") return;
 
-  const newTodoItemID = todoList.length + 1;
+  const newTodoItemID =
+    todoList.length > 0 ? todoList[todoList.length - 1].id + 1 : 1;
   const newItem = {
     id: newTodoItemID,
     task: newTodoItem,
     completed: false,
   };
+
   todoList.push(newItem);
-  const itemHtml = `
-  <li> <input type="checkbox" id="todo-${newItem.id}">
-  <label for="todo-${newItem.id}">${newItem.task}</label>
-  </li>
-  `;
-  todo.insertAdjacentHTML("beforeend", itemHtml);
+
+  renderTodoItem(newItem);
+
   inputText.value = "";
   formPopup.close();
-  console.log(todoList);
+  console.log("Updated todoList (New item added):", todoList);
 });
-
