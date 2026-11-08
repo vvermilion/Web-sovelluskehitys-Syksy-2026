@@ -49,7 +49,7 @@ modalButton.addEventListener("click", () => {
 // get the table
 function createTable() {
   const table = document.querySelector("table");
-
+  table.innerHTML = '';
   // looping for every restaurant, making a row and two cells and attaching them
   restaurantList.forEach((restaurant) => {
     let newRow = document.createElement("tr");
@@ -62,15 +62,16 @@ function createTable() {
     table.appendChild(newRow);
 
     //highlight for restaurant name
-    nameCell.addEventListener("click", () => {
+    nameCell.addEventListener("click", async () => {
       const allRows = document.querySelectorAll("tr");
       allRows.forEach((row) => {
         row.classList.remove("highlight");
-        newRow.classList.add("highlight");
       });
+        newRow.classList.add("highlight");
+
       //add info to modal
       const menu = getDailyMenu(restaurant._id);
-      
+
       modalName.textContent = `Name: ${restaurant.name}`;
       modalAddress.textContent = `Address: ${restaurant.address}`;
       modalCity.textContent = `City: ${restaurant.city}`;
@@ -82,16 +83,23 @@ function createTable() {
 
 
 
-      //if (menu && menu.courses)
+      if (menu && menu.courses && menu.courses.length > 0) {
+        let menuHtml = "";
+        menu.courses.forEach((course) => {
+          menuHtml += `<li><strong>${course.name}</strong>: ${course.price || ""} (${course.diets || ""})</li>`;
+        });
+        modalDailyMenu.innerHTML = menuHtml;
+      } else {
+        modalDailyMenu.innerHTML = "<p>No menu available for today.</p>";
+      }
     });
   });
 }
 
-getRestaurants();
+
 function initializeRestaurants() {
   console.log(`Number of restaurants loaded: `, restaurantList.length);
   restaurantList.sort((a, b) => a.name.localeCompare(b.name));
-  console.log(restaurantList);
   createTable();
 }
-
+getRestaurants();
