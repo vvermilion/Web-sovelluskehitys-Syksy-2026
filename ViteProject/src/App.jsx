@@ -8,8 +8,7 @@ const App = () => {
     <>
       <h1>{sitename}</h1>
       <p>Hello! This is my app.</p>
-      <Greeting name="Maisa" />
-      <Greeting name="Luna" />
+      <Greeting name="Maisa" age={23}/>
       <ul>
         <li>This</li>
         <li>is</li>
