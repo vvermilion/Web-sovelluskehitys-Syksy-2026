@@ -1,21 +1,14 @@
 import './App.css';
-import Greeting from './components/Greeting';
 
-const App = () => {
+ import Home from './components/Home';
 
-  const sitename = 'Super site!';
-  return (
-    <>
-      <h1>{sitename}</h1>
-      <p>Hello! This is my app.</p>
-      <Greeting name="Maisa" age={23}/>
-      <ul>
-        <li>This</li>
-        <li>is</li>
-        <li>my</li>
-        <li>list</li>
-      </ul>
-    </>
-  );
-};
-export default App;
+
+ const App = () => {
+   return (
+     <>
+       <h1>My App</h1>
+       <Home />
+     </>
+   );
+ };
+ export default App;
