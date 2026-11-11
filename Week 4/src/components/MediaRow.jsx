@@ -21,8 +21,7 @@ MediaRow.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     filesize: PropTypes.string.isRequired,
-    media_type: PropTypes.
-
+    media_type: PropTypes.string.isRequired,
   }),
 };
 
