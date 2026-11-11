@@ -101,3 +101,23 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+th {
+  background-color: #c084fc;
+  font-weight: bold;
+  color: #08060d;
+}
+
+tr {
+  background-color: #e5e4e7;
+  text-align: center;
+}
+
+#mediaType {
+  text-decoration: underline;
+}
+#mediaDate {
+  font-style: italic;
+}
+
+
