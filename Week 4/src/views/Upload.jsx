@@ -1,6 +1,9 @@
 const Upload = () => {
   return (
-    <div>Upload</div>
+    <>
+      <p>Uploads</p>
+    </>
+
   )
 }
 
