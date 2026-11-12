@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
        <td id='mediaDate'>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
        <td>{item.filesize}</td>
        <td id='mediaType'>{item.media_type}</td>
+       <td><button onClick={() => setItem(item)}>View</button></td>
      </tr>
    );
  };
