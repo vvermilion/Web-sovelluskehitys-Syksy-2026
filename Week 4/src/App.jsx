@@ -4,6 +4,7 @@ import Home from './views/Home';
 import Layout from './components/Layout';
 import Profile from './views/Profile';
 import Upload from './views/Upload';
+import Single from './views/Single';
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="Profile" element={<Profile/>} />
-          <Route path="Uploads" element={<Upload/>} />
+          <Route path="Upload" element={<Upload/>} />
+          <Route path="Single" element={<Single/>} />
           {/* TODO: add missing routes */}
         </Route>
       </Routes>

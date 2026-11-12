@@ -21,7 +21,9 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-      <footer><p>This is my page!</p></footer>
+      <footer>
+        <p>This is my page!</p>
+      </footer>
     </>
   );
 }

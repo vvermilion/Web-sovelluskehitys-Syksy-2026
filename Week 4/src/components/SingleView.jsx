@@ -18,7 +18,7 @@
            <source src={item?.filename} />
          </video>
        )}
-       <p>{item?.description}</p>
+       <p>{item.description ? item.description : 'No description' }</p>
      </dialog>
    );
  };
