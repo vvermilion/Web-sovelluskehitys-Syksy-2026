@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import MediaRow from './MediaRow.jsx';
+import MyComponent from './MyComponent.jsx';
 
 const mediaArray = [
   {
@@ -37,8 +39,10 @@ const mediaArray = [
 ];
 
 const Home = () => {
+  useState();
   return (
     <>
+    <MyComponent/>
       <h2>My Media</h2>
       <table>
         <thead>
