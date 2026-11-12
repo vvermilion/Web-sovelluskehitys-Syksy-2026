@@ -119,5 +119,17 @@ tr {
 #mediaDate {
   font-style: italic;
 }
-
+#closeButton {
+  color: #08060d;
+}
+#video {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+}
+#image {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
 

@@ -7,7 +7,18 @@
      // - use img tag for displaying images
      // - use video tag for displaying videos
      <dialog open onClick={() => setItem(null)}>
-       <h3>Title: {item?.title}</h3>
+       <button id="closeButton" onClick={() => close}>
+         X
+       </button>
+       <h3>{item?.title}</h3>
+       {item.media_type.startsWith('image') ? (
+         <img id='image' src={item?.thumbnail}></img>
+       ) : (
+         <video id='video'>
+           <source src={item?.filename} />
+         </video>
+       )}
+       <p>{item?.description}</p>
      </dialog>
    );
  };

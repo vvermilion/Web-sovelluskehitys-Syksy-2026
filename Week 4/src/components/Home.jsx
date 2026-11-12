@@ -61,12 +61,13 @@ const Home = () => {
             <MediaRow
               key={item.media_id}
               item={item}
-              setItem={setItem}
+              setItem={setSelectedItem}
             />
           ))}
         </tbody>
       </table>
-      {selectedItem} && SingleView item={selectedItem}/
+      {selectedItem && ( <SingleView item={selectedItem} setItem={setSelectedItem}/>
+      )}
     </>
   );
 };
