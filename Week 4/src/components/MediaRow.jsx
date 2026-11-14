@@ -25,9 +25,11 @@ MediaRow.propTypes = {
     thumbnail: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    filesize: PropTypes.string.isRequired,
+    filesize: PropTypes.number.isRequired, // Changed from string to number
     media_type: PropTypes.string.isRequired,
-  }),
+    created_at: PropTypes.string.isRequired,
+  }).isRequired,
+  setItem: PropTypes.func.isRequired, // Added setItem validation
 };
 
 export default MediaRow;
